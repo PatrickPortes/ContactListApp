@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/ContactListApp/app/src/main/res/drawable/shape_photo.xml" value="0.1795" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/ContactListApp/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/ContactListApp/app/src/main/res/layout/contact_item.xml" value="0.5" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/ContactListApp/app/src/main/res/layout/custom_styles.xml" value="0.3916015625" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/ContactListApp/app/src/main/res/layout/shape_photo.xml" value="0.2109375" />
       </map>
     </option>
   </component>
