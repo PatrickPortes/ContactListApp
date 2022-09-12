@@ -2,6 +2,7 @@ package com.example.contactlistapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar!!.hide()
 
         bindViews()
         updateListData()
@@ -32,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 Contact(
                     "Patrick Portes",
                     "(11) 01234-5678",
-                    "image.png"
+                    "image.png",
                 )
             )
         )
