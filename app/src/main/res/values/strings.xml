@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Contact List</string>
+
+    <string name="menu_1">Option One</string>
+    <string name="menu_2">Option Two</string>
+    <string name="menu_3">Option Three</string>
+
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
 </resources>
