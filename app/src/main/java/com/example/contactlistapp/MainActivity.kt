@@ -1,22 +1,23 @@
 package com.example.contactlistapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contactlistapp.ContactDetailActivity.Companion.EXTRA_CONTACT
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_drawer_menu.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ClickItemContactListener {
 
     private val rvList : RecyclerView by lazy { recyclerViewList }
 
-    private val adapter = ContactAdapter()
+    private val adapter = ContactAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,51 +96,60 @@ class MainActivity : AppCompatActivity() {
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Jose Almeida",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Caroline Fernandes",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Lucas Silva",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Matheus Augusto",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Amanda Pontes",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Charles Oliveira",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Thainá Vilela",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Renata Rodrigues",
                     "(11) 01234-5678",
                     "image.png",
                 ),
                 Contact(
-                    "Patrick Portes",
+                    "Larissa Ferreira",
                     "(11) 01234-5678",
                     "image.png",
                 )
             )
         )
     }
+
+    //Click Item Listener da Interface
+    override fun clickItemContact(contact: Contact) {
+        val intent = Intent(this, ContactDetailActivity::class.java)
+        intent.putExtra(EXTRA_CONTACT, contact)
+        startActivity(intent)
+    }
+
+
 }

@@ -8,14 +8,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.contact_item.view.*
 
-class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHolder>() {
+class ContactAdapter(var listener: ClickItemContactListener) : RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHolder>() {
 
     private val list: MutableList<Contact> = mutableListOf()
 
     //Cria cada Item da Lista
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactAdapterViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.contact_item, parent, false)
-        return ContactAdapterViewHolder(view)
+        return ContactAdapterViewHolder(view, list, listener)
     }
 
     //Faz a Leitura do Item do Array e Popula na Tela
@@ -35,11 +35,19 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHol
     }
 
     //Responsável por Fazer o Binding de Cada Item da Lista
-    inner class ContactAdapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ContactAdapterViewHolder(itemView: View, var list: List<Contact>, var listener: ClickItemContactListener) :
+        RecyclerView.ViewHolder(itemView){
 
         private val tvName: TextView = itemView.textViewName
         private val tvPhone: TextView = itemView.textViewPhone
         private val ivPhoto: ImageView = itemView.imageViewPhoto
+
+        //Criando o Click:
+        init {
+            itemView.setOnClickListener {
+                listener.clickItemContact(list[adapterPosition])
+            }
+        }
 
         fun bind(contact: Contact){
 
