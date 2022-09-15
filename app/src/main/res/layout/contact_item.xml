@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewName"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:textColor="#756A6A"/>
+            style="@style/TextViewDedault"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
