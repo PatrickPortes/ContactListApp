@@ -53,6 +53,7 @@ class ContactAdapter(var listener: ClickItemContactListener) : RecyclerView.Adap
 
             tvName.text = contact.name
             tvPhone.text = contact.phone
+            ivPhoto.setImageResource(R.drawable.padrao)
 
         }
 
